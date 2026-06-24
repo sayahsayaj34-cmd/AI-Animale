@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@theme {
+  --color-mainColor: #40826d;
+  --color-scendColor: #f2f3f4;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+  /* color: #010b13; */
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+body {
+  background-color: #f2f3f4;
+}
+
+a:hover {
+  color: #40826d;
+}
+
+button {
+  border-radius: 12px;
+  background-color: #40826d;
+  color: #f2f3f4 !important;
+  border: 2px solid;
+}
+button:hover {
+  background-color: #f2f3f4;
+  cursor: pointer;
+  color: #40826d !important;
+  border: 2px solid;
+}
+
+.home-section {
+  background-image: url("/backgroundHome.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.home-section {
+  min-height: 100vh;
+  background-image: url("/backgroundHome.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+input {
+  font-size: 12px;
+  background-color: #f2f3f4;
+  color: #40826d !important;
+}
+form * {
+  color: #f2f3f4;
+}
+form a {
+  text-decoration: none;
+}
+form a:hover {
+  color: #f2f3f4;
+  font-weight: bold;
+  border-bottom: 2px solid #f2f3f4;
+}
+.logOut:hover {
+  color: #ff0800;
+  border: 2px solid #ff0800 !important;
+  background-color: #f2f3f4 !important;
+}
+
+.option li,
+.userOption li {
+  border-bottom: 2px solid #40826d;
+  padding: 5%;
+  font-style: text-center;
+  display: flex;
+  gap: 10px;
+}
+.option li:hover,
+.userOption li:hover {
+  background-color: #40826d;
+  color: #f2f3f4;
+  cursor: pointer;
+}
+.userOption {
+  border-top: 2px solid #40826d;
+}
+
+.userOption li:last-child:hover {
+  background-color: #ff0800 !important;
+}
+.titleAnimalePage {
+  color: #f2f3f4;
+}
+.parent > div {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid #40826d;
+  width: 30%;
+  gap: 2;
+}
+.animal-form * {
+  color: #40826d !important;
+}

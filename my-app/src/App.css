@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@theme {
+  --color-mainColor: #7BA05B;
+  --color-secend: #f2f3f4;
+}
+
+.nav {
+  margin: 10% 0%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+  color: #1d6fb6 !important;
+}
+.pages,
+li {
+  color: #1d6fb6;
+}
+.home * {
+  margin: 1rem !important
+  ;
+}
