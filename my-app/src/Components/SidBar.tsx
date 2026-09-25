@@ -1,12 +1,4 @@
-import {
-  LayoutDashboard,
-  Rabbit,
-  Brain,
-  PawPrint,
-  ShoppingBag,
-  UserRoundCog,
-  LogOut,
-} from "lucide-react";
+import { LayoutDashboard, Rabbit, PawPrint, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 function SidBar() {
   return (
@@ -38,7 +30,7 @@ function SidBar() {
           </li>
         </Link>
       </ul>
-      <ul className="userOption w-full">
+      {/*    <ul className="userOption w-full">
         <li>
           <UserRoundCog /> Parametres
         </li>
@@ -46,7 +38,7 @@ function SidBar() {
           <LogOut />
           Déconnexion
         </li>
-      </ul>
+      </ul> */}
     </section>
   );
 }
