@@ -24,12 +24,14 @@ const SYMPTOM_GROUPS: Record<string, string[]> = {
     "Lethargy",
     "Dehydration",
   ],
+
   "🫁 Respiratory": [
     "Coughing",
     "Nasal discharge",
     "Difficulty breathing",
     "Wheezing",
   ],
+
   "🫃 Digestive": [
     "Diarrhea",
     "Bloating",
@@ -37,12 +39,14 @@ const SYMPTOM_GROUPS: Record<string, string[]> = {
     "Constipation",
     "Drooling",
   ],
+
   "🦵 Locomotion": [
     "Limping",
     "Swollen joints",
     "Hoof problems",
     "Muscle weakness",
   ],
+
   "🐾 Skin & Coat": [
     "Hair loss",
     "Skin lesions",
@@ -50,6 +54,7 @@ const SYMPTOM_GROUPS: Record<string, string[]> = {
     "Wounds",
     "Swelling",
   ],
+
   "🔬 Reproductive": ["Abnormal discharge", "Abortion", "Mastitis signs"],
 };
 
@@ -62,6 +67,7 @@ const DISEASE_RULES = [
     recommendation:
       "Isolate the animal, monitor temperature, and contact a veterinarian within 24 hours.",
   },
+
   {
     disease: "Mastitis",
     symptoms: ["Mastitis signs"],
@@ -70,6 +76,7 @@ const DISEASE_RULES = [
     recommendation:
       "Contact a veterinarian immediately. Check udder condition and milk quality.",
   },
+
   {
     disease: "Foot Rot",
     symptoms: ["Limping", "Hoof problems"],
@@ -78,6 +85,7 @@ const DISEASE_RULES = [
     recommendation:
       "Clean affected hooves, isolate the animal, and consult a veterinarian.",
   },
+
   {
     disease: "Digestive Disorder",
     symptoms: ["Vomiting", "Diarrhea", "Loss of appetite"],
@@ -86,6 +94,7 @@ const DISEASE_RULES = [
     recommendation:
       "Provide clean water, monitor hydration, and seek veterinary advice.",
   },
+
   {
     disease: "Parasitic Infection",
     symptoms: ["Weight loss", "Hair loss", "Lethargy"],
@@ -93,6 +102,7 @@ const DISEASE_RULES = [
     risk: "Medium",
     recommendation: "Perform parasite treatment and consult a veterinarian.",
   },
+
   {
     disease: "Skin Disease",
     symptoms: ["Itching", "Skin lesions", "Hair loss"],
@@ -101,6 +111,7 @@ const DISEASE_RULES = [
     recommendation:
       "Inspect skin condition, isolate if contagious, and contact a veterinarian.",
   },
+
   {
     disease: "Severe Infection",
     symptoms: ["Fever", "Wounds", "Swelling"],
@@ -145,7 +156,7 @@ function generateDiagnosis(symptoms: string[]): Prediction {
   };
 }
 
-function DiagnosisForm({ animalId, animalSpecies, onResult }: Props) {
+function DiagnosisForm({ animalSpecies, onResult }: Props) {
   const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
   const [extraSymptoms, setExtraSymptoms] = useState("");
   const [loading, setLoading] = useState(false);
@@ -189,7 +200,9 @@ function DiagnosisForm({ animalId, animalSpecies, onResult }: Props) {
     <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
       <div className="p-4 border-b border-gray-100 flex items-center gap-2">
         <ClipboardList size={18} className="text-mainColor" />
+
         <h2 className="font-semibold text-gray-800">Symptom checker</h2>
+
         <span className="ml-auto text-xs text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full">
           {animalSpecies}
         </span>
@@ -208,6 +221,7 @@ function DiagnosisForm({ animalId, animalSpecies, onResult }: Props) {
             <div className="text-xs font-medium text-gray-500 mb-2">
               {group}
             </div>
+
             <div className="flex flex-wrap gap-2">
               {symptoms.map((s) => (
                 <button
@@ -231,6 +245,7 @@ function DiagnosisForm({ animalId, animalSpecies, onResult }: Props) {
           <label className="text-xs text-gray-500 font-medium uppercase tracking-wide">
             Other observations
           </label>
+
           <textarea
             placeholder="Describe anything else you notice — behaviour, physical appearance..."
             rows={2}

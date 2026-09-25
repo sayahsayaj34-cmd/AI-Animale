@@ -1,11 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserLock, UserPlus, LogOut } from "lucide-react";
 import { useEffect, useState } from "react";
+import type { User } from "@supabase/supabase-js";
 import { supabase } from "../lib/supabaseClient";
 
 function NavBar() {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
+
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -39,12 +41,15 @@ function NavBar() {
           <NavLink to="/">
             <li>Home</li>
           </NavLink>
+
           <NavLink to="/Bibliotheque">
-            <li> Bibliothèque</li>
+            <li>Bibliothèque</li>
           </NavLink>
+
           <NavLink to="/projects">
             <li></li>
           </NavLink>
+
           <NavLink to="/About">
             <li>About</li>
           </NavLink>
@@ -56,10 +61,11 @@ function NavBar() {
               <li>
                 <span className="text-mainColor font-semibold"></span>
               </li>
+
               <li>
                 <button
                   onClick={handleLogout}
-                  className=" logOut     flex items-center gap-2 px-4 py-2 !bg-[#FF0800] text-white rounded-xl">
+                  className="logOut flex items-center gap-2 px-4 py-2 !bg-[#FF0800] text-white rounded-xl">
                   <LogOut size={18} />
                   <span>Logout</span>
                 </button>
@@ -77,6 +83,7 @@ function NavBar() {
                   </NavLink>
                 </button>
               </li>
+
               <li>
                 <button>
                   <NavLink
